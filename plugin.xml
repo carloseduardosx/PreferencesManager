@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+      id="com.carloseduardo.preferences.manager" version="0.0.1">
+  <name>PreferencesManager</name>
+  <description>PreferencesManager is a cordova plugin to store some data using android SharedPreferences</description>
+  <license>Apache 2.0</license>
+  <keywords>cordova, cordova-android, preferences, shared-preferences, store, storage, device, android</keywords>
+  <platform name="android">
+      <js-module src="www/PreferencesManager.js" name="PreferencesManager">
+       <clobbers target="PreferencesManager" />
+      </js-module>
+      <config-file target="config.xml" parent="/*">
+          <feature name="PreferencesManager" >
+              <param name="android-package" value="com.carloseduardo.preferences.manager.PreferencesManager"/>
+          </feature>
+      </config-file>
+      <source-file src="src/com/carloseduardo/preferences/manager/PreferencesManager.java" target-dir="src/com/carloseduardo/preferences/manager" />
+      <source-file src="src/com/carloseduardo/preferences/manager/Preferences.java" target-dir="src/com/carloseduardo/preferences/manager" />
+      <source-file src="src/com/carloseduardo/preferences/manager/PreferencesImpl.java" target-dir="src/com/carloseduardo/preferences/manager" />
+  </platform>
+</plugin>
