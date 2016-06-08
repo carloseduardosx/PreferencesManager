@@ -22,6 +22,14 @@ Below has a example of how to **restore** that information.
 PreferencesManager.restore(type, key);
 ```
 
+#### Remove data
+
+Remove data is pretty simple too. To remove simply call the function **remove** and pass the key do you want to remove.
+
+```javascript
+PreferencesManager.remove(key);
+```
+
 #### Supported types
 
 Currently is supported some set of data. Below has a table of data types with respective value to pass on `functions`

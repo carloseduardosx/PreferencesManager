@@ -24,6 +24,7 @@ public class PreferencesManager extends CordovaPlugin {
 
         final String store = "store";
         final String restore = "restore";
+        final String remove = "remove";
 
         if (isEmpty(action) || args == null || args.length() == 0) {
 
@@ -37,19 +38,15 @@ public class PreferencesManager extends CordovaPlugin {
 
             case store:
 
-                if (storePreference(args, preferences)) {
-
-                    callbackContext.success();
-                    return true;
-                } else {
-
-                    callbackContext.error(1);
-                    return false;
-                }
+                return storePreference(args, preferences, callbackContext);
 
             case restore:
 
                 return restorePreference(args, preferences, callbackContext);
+
+            case remove:
+
+                return removePreference(args, callbackContext, preferences);
 
             default:
                 callbackContext.error(1);
@@ -58,7 +55,8 @@ public class PreferencesManager extends CordovaPlugin {
     }
 
     private Boolean storePreference(@NonNull final JSONArray args,
-                                    @NonNull final Preferences preferences) throws JSONException {
+                                    @NonNull final Preferences preferences,
+                                    @NonNull final CallbackContext callbackContext) throws JSONException {
 
         int valueType = args.getInt(0);
 
@@ -85,8 +83,10 @@ public class PreferencesManager extends CordovaPlugin {
                 break;
 
             default:
+                callbackContext.error(1);
                 return false;
         }
+        callbackContext.success();
         return true;
     }
 
@@ -138,6 +138,15 @@ public class PreferencesManager extends CordovaPlugin {
                 callbackContext.error(1);
                 return false;
         }
+        return true;
+    }
+
+    private boolean removePreference(@NonNull final JSONArray args,
+                                     @NonNull final CallbackContext callbackContext,
+                                     @NonNull final Preferences preferences) throws JSONException {
+
+        preferences.remove(args.getString(0));
+        callbackContext.success();
         return true;
     }
 
