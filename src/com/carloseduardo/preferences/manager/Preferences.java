@@ -14,6 +14,8 @@ public interface Preferences {
 
     double getDouble(String key);
 
+    boolean getBoolean(String key);
+
     Date getDate(String key);
 
     void putString(String key, String value);
@@ -23,6 +25,8 @@ public interface Preferences {
     void putLong(String key, long value);
 
     void putFloat(String key, float value);
+
+    void putBoolean(String key, boolean value);
 
     void putDate(String key, Date date);
 

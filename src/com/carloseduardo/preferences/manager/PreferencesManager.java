@@ -16,7 +16,8 @@ public class PreferencesManager extends CordovaPlugin {
     final int longValue = 2;
     final int floatValue = 3;
     final int doubleValue = 4;
-    final int dateValue = 5;
+    final int booleanValue = 5;
+    final int dateValue = 6;
 
     @Override
     public boolean execute(final String action, final JSONArray args,
@@ -78,6 +79,10 @@ public class PreferencesManager extends CordovaPlugin {
                 preferences.putFloat(args.getString(1), (float) args.getDouble(2));
                 break;
 
+            case booleanValue:
+                preferences.putBoolean(args.getString(1), args.getBoolean(2));
+                break;
+
             case dateValue:
                 preferences.putDate(args.getString(1), new Date(args.getLong(2)));
                 break;
@@ -126,6 +131,11 @@ public class PreferencesManager extends CordovaPlugin {
 
                 float doubleValue = preferences.getFloat(args.getString(1));
                 callbackContext.success(String.valueOf(doubleValue));
+                break;
+
+            case booleanValue:
+                boolean booleanValue = preferences.getBoolean(args.getString(1));
+                callbackContext.success(String.valueOf(booleanValue));
                 break;
 
             case dateValue:

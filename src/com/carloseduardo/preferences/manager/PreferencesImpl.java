@@ -41,6 +41,11 @@ public class PreferencesImpl implements Preferences {
     }
 
     @Override
+    public boolean getBoolean(String key) {
+        return preferences.getBoolean(key, false);
+    }
+
+    @Override
     public Date getDate(String key) {
         long dateInMillis = preferences.getLong(key, 0);
         return dateInMillis == 0 ? null : new Date(dateInMillis);
@@ -64,6 +69,11 @@ public class PreferencesImpl implements Preferences {
     @Override
     public void putFloat(String key, float value) {
         preferences.edit().putFloat(key, value).apply();
+    }
+
+    @Override
+    public void putBoolean(String key, boolean value) {
+        preferences.edit().putBoolean(key, value).apply();
     }
 
     @Override

@@ -41,7 +41,8 @@ Int | 1
 Long | 2
 Float | 3
 Double | 4
-Date | 5
+Boolean | 5
+Date | 6
 
 
 ### License
