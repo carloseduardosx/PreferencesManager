@@ -30,6 +30,20 @@ Remove data is pretty simple too. To remove simply call the function **remove** 
 PreferencesManager.remove(key);
 ```
 
+#### Utils
+
+Use the **PreferenceType** to select what kind of type do you need. See exemple below:
+
+```
+PreferencesManager.store(PreferenceType.STRING, type, value);
+```
+
+Use the **PreferenceKey** to map your keys.
+
+```
+PreferencesManager.store(type, PreferencesKey.DEVICE_ID, value);
+```
+
 #### Supported types
 
 Currently is supported some set of data. Below has a table of data types with respective value to pass on `functions`
