@@ -17,7 +17,7 @@
           <clobbers target="PreferenceKey" />
       </js-module>
 
-      <js-module src="www/PreferenceType.js" name="PreferenceType">
+      <js-module src="www/android/PreferenceType.js" name="PreferenceType">
           <clobbers target="PreferenceType" />
       </js-module>
 
@@ -30,5 +30,28 @@
       <source-file src="src/android/com/carloseduardo/preferences/manager/PreferencesManager.java" target-dir="src/com/carloseduardo/preferences/manager" />
       <source-file src="src/android/com/carloseduardo/preferences/manager/Preferences.java" target-dir="src/com/carloseduardo/preferences/manager" />
       <source-file src="src/android/com/carloseduardo/preferences/manager/PreferencesImpl.java" target-dir="src/com/carloseduardo/preferences/manager" />
+  </platform>
+  <platform name="ios">
+
+      <js-module src="www/PreferencesManager.js" name="PreferencesManager">
+         <clobbers target="PreferencesManager" />
+      </js-module>
+
+      <js-module src="www/PreferenceKey.js" name="PreferenceKey">
+          <clobbers target="PreferenceKey" />
+      </js-module>
+
+      <js-module src="www/ios/PreferenceType.js" name="PreferenceType">
+          <clobbers target="PreferenceType" />
+      </js-module>
+
+      <config-file target="config.xml" parent="/*">
+          <feature name="PreferencesManager" >
+              <param name="ios-package" value="PreferencesManager"/>
+          </feature>
+      </config-file>
+
+      <header-file src="src/ios/PreferencesManager.h" />
+      <source-file src="src/ios/PreferencesManager.m" />
   </platform>
 </plugin>
