@@ -5,7 +5,7 @@
 
 typedef enum
 {
-    STRING = 0
+    STRING = 0, INTEGER = 1
 } Type;
 
 
@@ -17,7 +17,8 @@ typedef enum
         case STRING:
             [self.preferences setObject:value forKey:key];
             break;
-
+        case INTEGER:
+            [self.preferences setInteger:[value integerValue] forKey:key];
         default:
             break;
     }
@@ -46,14 +47,7 @@ typedef enum
     NSString *key = [comand.arguments objectAtIndex:1];
     NSString *data = @"";
 
-    switch (type) {
-        case STRING:
-            data = [self.preferences valueForKey:key];
-            break;
-
-        default:
-            break;
-    }
+    data = [self.preferences valueForKey:key];
 
     [self sendResultSuccess:data :comand];
 
