@@ -46,4 +46,11 @@
       <header-file src="src/ios/PreferencesManager.h" />
       <source-file src="src/ios/PreferencesManager.m" />
   </platform>
+    <platform name="windows">
+
+      <js-module src="www/windows/PreferenceType.js" name="PreferenceType">
+          <clobbers target="PreferenceType" />
+      </js-module>
+
+  </platform>
 </plugin>
