@@ -48,9 +48,13 @@
   </platform>
     <platform name="windows">
 
-      <js-module src="www/windows/PreferenceType.js" name="PreferenceType">
-          <clobbers target="PreferenceType" />
-      </js-module>
+        <js-module src="src/windows/PreferencesManagerProxy.js" name="PreferencesManagerProxy">
+            <runs />
+        </js-module>
+
+        <js-module src="www/windows/PreferenceType.js" name="PreferenceType">
+            <clobbers target="PreferenceType" />
+        </js-module>
 
   </platform>
 </plugin>
