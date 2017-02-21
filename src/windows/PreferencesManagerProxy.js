@@ -3,7 +3,7 @@ var PreferenceKey   = require('./PreferenceKey');
 module.exports = {
     restore: function (success, fail, args) {
         var type = args[0];
-        var key = PreferenceKey[args[1]];
+        var key = args[1];
         var value = args[2];
 
         try{
@@ -19,13 +19,13 @@ module.exports = {
             }
 
         } catch (e) {
-            fail(e);
+            fail(e.message);
         }
 
     },
     store: function (success, fail, args) {
         var type = args[0];
-        var key = PreferenceKey[args[1]];
+        var key = args[1];
         var value = args[2];
 
         try{
@@ -42,13 +42,13 @@ module.exports = {
             }
 
         } catch (e) {
-            fail(e);
+            fail(e.message);
         }
 
     },
     remove: function (success, fail, args) {
         var type = args[0];
-        var key = PreferenceKey[args[1]];
+        var key = args[1];
         var value = args[2];
 
         try{
@@ -65,7 +65,7 @@ module.exports = {
             }
 
         } catch (e) {
-            fail(e);
+            fail(e.message);
         }
     }
 }
