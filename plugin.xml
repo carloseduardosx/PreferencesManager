@@ -7,15 +7,15 @@
   <license>Apache 2.0</license>
   <keywords>cordova, cordova-android, preferences, shared-preferences, store, storage, device, android</keywords>
 
+    <js-module src="www/PreferencesManager.js" name="PreferencesManager">
+        <clobbers target="PreferencesManager" />
+    </js-module>
+
+    <js-module src="www/PreferenceKey.js" name="PreferenceKey">
+        <clobbers target="PreferenceKey" />
+    </js-module>
+
   <platform name="android">
-
-      <js-module src="www/PreferencesManager.js" name="PreferencesManager">
-         <clobbers target="PreferencesManager" />
-      </js-module>
-
-      <js-module src="www/PreferenceKey.js" name="PreferenceKey">
-          <clobbers target="PreferenceKey" />
-      </js-module>
 
       <js-module src="www/android/PreferenceType.js" name="PreferenceType">
           <clobbers target="PreferenceType" />
@@ -33,14 +33,6 @@
   </platform>
   <platform name="ios">
 
-      <js-module src="www/PreferencesManager.js" name="PreferencesManager">
-         <clobbers target="PreferencesManager" />
-      </js-module>
-
-      <js-module src="www/PreferenceKey.js" name="PreferenceKey">
-          <clobbers target="PreferenceKey" />
-      </js-module>
-
       <js-module src="www/ios/PreferenceType.js" name="PreferenceType">
           <clobbers target="PreferenceType" />
       </js-module>
@@ -53,5 +45,16 @@
 
       <header-file src="src/ios/PreferencesManager.h" />
       <source-file src="src/ios/PreferencesManager.m" />
+  </platform>
+    <platform name="windows">
+
+        <js-module src="src/windows/PreferencesManagerProxy.js" name="PreferencesManagerProxy">
+            <runs />
+        </js-module>
+
+        <js-module src="www/windows/PreferenceType.js" name="PreferenceType">
+            <clobbers target="PreferenceType" />
+        </js-module>
+
   </platform>
 </plugin>
