@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/renanbandeira/PreferencesManager.git"
+    "url": "git+https://github.com/carloseduardosx/PreferencesManager.git"
   },
   "keywords": [
     "cordova",
@@ -31,7 +31,7 @@
   "author": "Carlos Eduardo",
   "license": "Apache 2.0",
   "bugs": {
-    "url": "https://github.com/renanbandeira/PreferencesManager/issues"
+    "url": "https://github.com/carloseduardosx/PreferencesManager/issues"
   },
-  "homepage": "https://github.com/renanbandeira/PreferencesManager#readme"
+  "homepage": "https://github.com/carloseduardosx/PreferencesManager#readme"
 }
