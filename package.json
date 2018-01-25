@@ -1,0 +1,37 @@
+{
+  "name": "com.carloseduardo.preferences.manager",
+  "version": "0.3.0",
+  "description": "PreferencesManager is a cordova plugin to store some data using android SharedPreferences",
+  "cordova": {
+    "id": "com.carloseduardo.preferences.manager",
+    "platforms": [
+      "android",
+      "ios",
+      "windows"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/renanbandeira/PreferencesManager.git"
+  },
+  "keywords": [
+    "cordova",
+    "cordova-android",
+    "preferences",
+    "shared-preferences",
+    "store",
+    "storage",
+    "device",
+    "android",
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios",
+    "cordova-windows"
+  ],
+  "author": "Carlos Eduardo",
+  "license": "Apache 2.0",
+  "bugs": {
+    "url": "https://github.com/renanbandeira/PreferencesManager/issues"
+  },
+  "homepage": "https://github.com/renanbandeira/PreferencesManager#readme"
+}
