@@ -4,6 +4,8 @@ import android.content.Context;
 import android.content.SharedPreferences;
 
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 public class PreferencesImpl implements Preferences {
 
@@ -41,6 +43,11 @@ public class PreferencesImpl implements Preferences {
     }
 
     @Override
+    public Set<String> getStringSet(String key) {
+        return preferences.getStringSet(key, new HashSet<>());
+    }
+
+    @Override
     public boolean getBoolean(String key) {
         return preferences.getBoolean(key, false);
     }
@@ -54,6 +61,11 @@ public class PreferencesImpl implements Preferences {
     @Override
     public void putString(String key, String value) {
         preferences.edit().putString(key, value).apply();
+    }
+
+    @Override
+    public void putStringSet(String set, Set<String> value) {
+        preferences.edit().putStringSet(set, value).apply();
     }
 
     @Override
